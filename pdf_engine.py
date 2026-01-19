@@ -41,7 +41,7 @@ def draw_header_footer(canvas, doc, branding_config):
 
     # Title (Centered)
     canvas.setFont("Helvetica-Bold", 20)
-    canvas.drawCentredString(width/2, height - 1.0*inch, "E-WARRANTY CERTIFICATE")
+    canvas.drawCentredString(width/2, height - 1.0*inch, "WARRANTY CERTIFICATE")
     
     # Sub-Branding (Issued To...)
     client_name = branding_config.get('client_name', 'Client')
@@ -208,7 +208,7 @@ def generate_certificate(data_row, photos_map, output_path, branding_config):
         
         # Table header
         spec_data = [
-            ['Warranty Coverage', 'Board Size', 'Total Sqft', 'LED Module (Qty)', 'Power Supply (Watt)']
+            ['Warranty Coverage', 'Board Size', 'Total Sqft', 'LED Module (Qty)', 'Power Supply']
         ]
         
         # Track which rows need merged cells (for "Comprehensive Warranty")
@@ -344,4 +344,5 @@ def generate_bulk_certificates(df, images_dict, output_dir, branding_config):
             continue
             
     return generated_files
+
 
