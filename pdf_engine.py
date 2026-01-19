@@ -55,7 +55,7 @@ def draw_header_footer(canvas, doc, branding_config):
     canvas.setFont("Helvetica", 8)
     canvas.setFillColor(colors.grey)
     canvas.drawCentredString(width/2, 0.5*inch, "This is a computer-generated warranty certificate. No signature required.")
-    canvas.drawCentredString(width/2, 0.35*inch, "Powered by TRIAD Technologies")
+    canvas.drawCentredString(width/2, 0.35*inch, "This document contains confidential terms and proprietary information")
     
     canvas.restoreState()
 
@@ -178,7 +178,7 @@ def generate_certificate(data_row, photos_map, output_path, branding_config):
     if pd.notna(data_row.get('only_fascia_replacement_size')):
         warranties.append({
             'type_id': '2',
-            'title': 'Only Fascia (Vinyl) Replacement',
+            'title': 'Only Fascia Replacement',
             'size': data_row.get('only_fascia_replacement_size'),
             'qty': data_row.get('only_fascia_replacement_qty', 1),
             'sqft': data_row.get('only_fascia_replacement_sqft', 0),
@@ -344,3 +344,4 @@ def generate_bulk_certificates(df, images_dict, output_dir, branding_config):
             continue
             
     return generated_files
+
